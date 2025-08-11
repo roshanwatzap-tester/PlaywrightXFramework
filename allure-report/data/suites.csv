@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","16892","Roshan_E2E_Web_Scenario:1","chromium","Mon Aug 11 22:20:22 NZST 2025","passed","Mon Aug 11 22:20:39 NZST 2025","","E2E_PO.spec.js","",""
+"","18078","Roshan_E2E_Using_AI_Test01","chromium","Mon Aug 11 22:20:22 NZST 2025","passed","Mon Aug 11 22:20:40 NZST 2025","","AI.spec.js","",""
+"","16250","Roshan_E2E_Web_Scenario:2","chromium","Mon Aug 11 22:20:41 NZST 2025","passed","Mon Aug 11 22:20:57 NZST 2025","","E2E_PO.spec.js","",""

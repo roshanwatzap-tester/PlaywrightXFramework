@@ -1,0 +1,32 @@
+const {test, expect} = require ('@playwright/test');
+import {ai} from "@zerostep/playwright"   // external Library for NLP based AI processing
+test('Roshan_E2E_Using_AI_Test01', async({browser})=>
+    {   const context = await browser.newContext();
+        const page  = await browser.newPage(); 
+        const AIvals = { page, test };
+        await page.goto("https://www.saucedemo.com/"); 
+        const headerText = await ai('Get the header text', AIvals);
+        console.log("Header Text : "+ headerText);
+        await ai ('Type standard_user in the username field',AIvals);
+        await ai ('Type secret_sauce in the password field',AIvals); 
+        await ai("Click on the Login Button",AIvals); 
+        const firstProductName= await ai("What is the name of the first product displayed", AIvals);
+        console.log("First Product Displayed is :  "+ firstProductName);
+        await ai("Click on Add to Cart for the first product displayed",AIvals); 
+        await ai("Click on Cart Button available on top right",AIvals);
+        const qtyInCart = await ai("what is the QTY of the product",AIvals);
+        expect(qtyInCart).toBe("1");
+        const ProdNameInCart = await ai("what is the name of the product",AIvals);
+        //expect(ProdNameInCart.trim()).toBe("Sauce Labs Backpack");
+        const PriceInCart = await ai("what is the Price of the product",AIvals);
+        //expect(PriceInCart.trim()).toBe("$ 29.99");
+        console.log("********************");
+        console.log("Quantity in Cart is : "+ qtyInCart);
+        console.log("Product Name in Cart is : "+ ProdNameInCart);
+        console.log("Product Price in Cart is : "+ PriceInCart);
+        console.log("********************");
+        await ai("Click on Checkout Button",AIvals);
+        await ai("Fill realistic values in the Form",AIvals);
+        await ai("Click on Continue Button",AIvals);
+        await ai("Click on Finish Button",AIvals);
+     } ); 

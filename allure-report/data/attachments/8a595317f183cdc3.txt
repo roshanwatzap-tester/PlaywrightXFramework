@@ -1,0 +1,9 @@
+Add To Cart Button clicked 
+The nation count is : 3
+Selecting the TestCountry
+The Email field autopopulated value extracted is : roshan.thomas@test.com
+Place Order Button clicked
+Order Number is :  | 6899c3f66f585eb60d6ed220 | 
+Count in Order History Page is :7
+Order ID found in Order History page on ROW NUMBER: 0
+View Clicked

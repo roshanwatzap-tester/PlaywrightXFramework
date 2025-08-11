@@ -1,0 +1,7 @@
+Header Text : Swag Labs
+First Product Displayed is :  Sauce Labs Backpack
+********************
+Quantity in Cart is : 1
+Product Name in Cart is : Sauce Labs Backpack
+Product Price in Cart is : $ 29.99
+********************
