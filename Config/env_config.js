@@ -7,14 +7,15 @@ const config =
  {
  baseURL: 'https://rahulshettyacademy.com/client',
  username: 'roshan.thomas@test.com',
- password: 'Password',
+ password: 'Password_CHANGE',
  },
 
 
  stage: 
  {
  baseURL: 'https://stage.roshan.com',
- username: 'stageRoshan_User',
+ username: 'stageRoshan_User_CHANGE',
+ 
  password: 'stageRoshan_Pass',
  },
   
