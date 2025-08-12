@@ -1,4 +1,4 @@
-name: CI Setuo for Playwright Tests
+name: Playwright Tests
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -19,10 +19,10 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies (using npm ci for clean install)
+        run: npm ci
 
-      - name: Install Playwright browsers
+      - name: Install Playwright browsers with dependencies
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
