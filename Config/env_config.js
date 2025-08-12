@@ -7,7 +7,7 @@ const config =
  {
  baseURL: 'https://rahulshettyacademy.com/client',
  username: 'roshan.thomas@test.com',
- password: 'Password_CHANGE',
+ password: 'Password2.',
  },
 
 
