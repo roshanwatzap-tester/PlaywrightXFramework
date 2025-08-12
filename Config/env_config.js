@@ -1,4 +1,4 @@
-// Change this value to switch environment
+// Change this value to switch environment   
 const env = 'test'; // Options: 'test', 'stage'
 
 const config = 
