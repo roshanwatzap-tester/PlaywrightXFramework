@@ -7,7 +7,7 @@ test('Roshan_E2E_Using_AI_Test01', async({browser})=>
         await page.goto("https://www.saucedemo.com/"); 
         const headerText = await ai('Get the header text', AIvals);
         console.log("Header Text : "+ headerText);
-        await ai ('Type standard_user in the username field',AIvals);
+        await ai ('Type visual_user in the username field',AIvals);
         await ai ('Type secret_sauce in the password field',AIvals); 
         await ai("Click on the Login Button",AIvals); 
         const firstProductName= await ai("What is the name of the first product displayed", AIvals);
