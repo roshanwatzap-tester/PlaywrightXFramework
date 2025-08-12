@@ -1,4 +1,4 @@
-name: Playwright Tests with Allure Report
+name: Playwright Tests with Allure
 
 on:
   push:
@@ -11,28 +11,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 20
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright browsers with dependencies
+      - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests with Allure reporter
+      - name: Run Playwright tests with Allure
         run: npx playwright test --reporter=line,allure-playwright
 
       - name: Generate Allure HTML report
-        run: npx allure generate ./allure-results -o ./allure-report
+        run: npx allure generate ./allure-results -o ./allure-report --clean
 
-      - name: Upload Allure report as an artifact
+      - name: Upload Allure report as artifact
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
-          path: allure-report
+          path: ./allure-report
