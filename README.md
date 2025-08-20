@@ -77,7 +77,7 @@ TRACE (via https://trace.playwright.dev/)
 FILE OPERATIONS
 ![File_Operations](images/File_Operations.png)
 PIPELINE CI SETUP
-![Pipeline(CISetup)](images/Pipeline(CI Setup).png)
+![PipelineCISetup](images/Pipeline(CI Setup).png)
 SCRIPTS (Package.json)
 ![Scripts](images/scripts.png)
 
