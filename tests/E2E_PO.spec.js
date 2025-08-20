@@ -1,12 +1,13 @@
 const {test, expect} = require ('@playwright/test');
 const {POManager} = require('../PageObjects/POManager');
 const env_config = require('../Config/env_config');
+const { readFile, writeOrder } = require("../utils/fileUtil");
 const TestDataSet= JSON.parse(JSON.stringify(require('../utils/TestData_E2E_PO.json')));
 
  
 
 //Test Scenario : 1 
-test('Roshan_E2E_Web_Scenario:1',async({browser}) => {
+test('Roshan_E2E_Web_Scenario:1 - Complete E2E Placing Order @Web',async({browser}) => {
 
    const context = await browser.newContext();
    const page    = await context.newPage(); 
@@ -34,7 +35,7 @@ test('Roshan_E2E_Web_Scenario:1',async({browser}) => {
   
 });
 //Test Scenario : 2 
-test('Roshan_E2E_Web_Scenario:2',async({browser}) => {
+test('Roshan_E2E_Web_Scenario:2-Verfiy navigation till Cart @Web',async({browser}) => {
 
    const context = await browser.newContext();
    const page    = await context.newPage(); 
