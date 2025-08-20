@@ -15,7 +15,6 @@
 | **Getting Started**        | `bash <br> git clone https://github.com/roshanwatzap-tester/PlaywrightXFramework.git <br> npm install <br> cp .env.example .env <br> npx playwright test <br> npx allure generate ./allure-results -o ./allure-report <br> allure open ./allure-report <br> `                                                                                                                                                                                                                                                    |
 | **Key Benefits**           | - **Separation of Concerns:** Test logic decoupled from locators <br> - **Reusability:** Factory + Facade patterns <br> - **Scalability:** Add new pages/components/workflows easily <br> - **Reliability:** Auto-waits, reports, traces, retries <br> - **CI/CD Ready:** GitHub Actions <br> - **Flexible Test Data:** JSON-driven <br> - **Enterprise-Ready:** Professional structure, rich reporting, deep programming proficiency                                                                            |
 | License         | Description                                                                                                   | Key Points       
-| --------------- | ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | **MIT License** | A permissive open-source license allowing free use, modification, distribution, and sublicensing of software. | - Must include original copyright notice <br> - No warranty, authors not liable <br> - Can be used commercially or personally |
 **Playwright Configuration (playwright.config.js) Explained**
 | Configuration Key  | Current Value                                             | Description                                                                         | Setup / Change Examples                                                                                     |
@@ -68,7 +67,7 @@ scripts": {
 ![Allure Report](images/AllureReport1.png)
 ![Trace](images/Trace.png)
 ![File_Operations](images/File_Operations.png)
-![Pipeline(CISetup)](images/Pipeline(CI Setup).png)
+![Pipeline(CISetup)](images/Pipeline(CISetup).png)
 ![Scripts](images/scripts.png)
 
 
