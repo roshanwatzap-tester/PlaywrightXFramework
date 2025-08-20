@@ -51,18 +51,23 @@ npm run webtests  will trigger the below command::
 
 Pacakge.Json set as below:
 
-scripts": {
+scripts": 
+{
+     
      "webtests" : "npx playwright test --grep @Web",
+    
      "AItests"  : "npx playwright test --grep @AI",
+     
      "SafariNewConfig" : "npx playwright test --config playwright.config1.js --project=safari"
   }
 
+**FRAMEWORK OVERVIEW SNAPSHOT**
 ![Framework Overview](images/framework-overview.png)
 
-
+**TERMINAL OUTPUT SNAPSHOT**
 ![TerminalOutput](images/Terminal Output.png)
 
-
+**TEST EVIDENCE SNAPSHOT**
 ![Test Screenshot](images/screenshot1.png)
 
 
@@ -71,25 +76,25 @@ scripts": {
 
 ![Test Screenshot](images/screenshot3.png)
 
-
+**PLAYWRIGHT HTML TEST REPORT**
 ![HTML_Report](images/HTML_Report.png)
 
-
+**PIPELINE DASHBOARD SNAPSHOT**
 ![Pipeline_Dashboard](images/Pipeline_Dashboard.png)
 
-
+**ALLURE REPORTS SNAPSHOT**
 ![Allure Report](images/AllureReport1.png)
 
-
+**TRACES SNAPSHOT**
 ![Trace](images/Trace.png)
 
-
+**FILE OPERATIONS**
 ![File_Operations](images/File_Operations.png)
 
-
+**PIPELINE SETUP SNAPSHOT**
 ![Pipeline(CISetup)](images/Pipeline(CISetup).png)
 
-
+**SCRIPTS SETUP AT PACKAGE.JSON SNAPSHOT**
 ![Scripts](images/scripts.png)
 
 
