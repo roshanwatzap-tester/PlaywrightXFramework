@@ -58,16 +58,38 @@ scripts": {
   }
 
 ![Framework Overview](images/framework-overview.png)
+
+
 ![TerminalOutput](images/Terminal Output.png)
+
+
 ![Test Screenshot](images/screenshot1.png)
+
+
 ![Test Screenshot](images/screenshot2.png)
+
+
 ![Test Screenshot](images/screenshot3.png)
+
+
 ![HTML_Report](images/HTML_Report.png)
+
+
 ![Pipeline_Dashboard](images/Pipeline_Dashboard.png)
+
+
 ![Allure Report](images/AllureReport1.png)
+
+
 ![Trace](images/Trace.png)
+
+
 ![File_Operations](images/File_Operations.png)
+
+
 ![Pipeline(CISetup)](images/Pipeline(CISetup).png)
+
+
 ![Scripts](images/scripts.png)
 
 
