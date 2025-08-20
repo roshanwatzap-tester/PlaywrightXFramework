@@ -58,17 +58,27 @@ scripts": {
      "SafariNewConfig" : "npx playwright test --config playwright.config1.js --project=safari"
   }
 
+FRAMEWORK OVERVIEW
 ![Framework Overview](images/framework-overview.png)
+CONSOLE / TERMINAL OUTPUT
 ![TerminalOutput](images/Terminal Output.png)
+TEST EVIDENCE / SCREEENSHOTS
 ![Test Screenshot](images/screenshot1.png)
 ![Test Screenshot](images/screenshot2.png)
 ![Test Screenshot](images/screenshot3.png)
+PLAYWRIGHT HTML TEST REPORT
 ![HTML_Report](images/HTML_Report.png)
+PIPELINE DASHBOARD
 ![Pipeline_Dashboard](images/Pipeline_Dashboard.png)
+ALLURE REPORT
 ![Allure Report](images/AllureReport1.png)
+TRACE (via https://trace.playwright.dev/)
 ![Trace](images/Trace.png)
+FILE OPERATIONS
 ![File_Operations](images/File_Operations.png)
+PIPELINE CI SETUP
 ![Pipeline(CISetup)](images/Pipeline(CI Setup).png)
+SCRIPTS (Package.json)
 ![Scripts](images/scripts.png)
 
 
