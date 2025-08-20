@@ -1,4 +1,6 @@
 const { expect } = require('@playwright/test');
+const { readFile, writeOrder } = require("../utils/fileUtil");
+
 class CheckoutPage
 {    
     constructor(page) 
@@ -108,6 +110,9 @@ class CheckoutPage
           const OrderId = await  this.page.locator("label[class='ng-star-inserted']").textContent(); 
         
           console.log("Order Number is : "+OrderId);
+
+          // Write Order ID to file
+           writeOrder("C:\\OrderNumbers_Test\\Orders.txt", OrderId,username);
         
           // Click on Order History Page Link 
           
