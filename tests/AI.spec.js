@@ -1,6 +1,6 @@
 const {test, expect} = require ('@playwright/test');
 import {ai} from "@zerostep/playwright"   // external Library for NLP based AI processing
-test('Roshan_E2E_Using_AI_Test01', async({browser})=>
+test('Roshan_E2E_Using_AI_Test01 @AI', async({browser})=>
     {   const context = await browser.newContext();
         const page  = await browser.newPage(); 
         const AIvals = { page, test };

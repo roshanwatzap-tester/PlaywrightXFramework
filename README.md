@@ -9,7 +9,7 @@
 | **Built with JavaScript**  | - Seamless Playwright integration <br> - Async/await handling <br> - Modular and fast execution <br> - **Study Folder**: <br> ArrayBasics.js, BubbleSortArray.js, Palindrome.js, Promise.spec.js, SessionStorage.spec.js <br> - Demonstrates loops, functions, async behavior, data structures, algorithmic thinking <br> 💡 Mastering fundamentals improves framework design and problem-solving                                                                                                                |
 | **Reporting**              | **Playwright HTML Reporter**: <br> - Captures screenshots, videos, traces <br> - Quick debugging and failure analysis <br> **Allure Reporting**: <br> - CI/CD integration <br> - Rich dashboards with trends, history, step-wise details <br> **Commands**: <br> `npx playwright test --reporter=line,allure-playwright` <br> `npx allure generate ./allure-results -o ./allure-report` <br> `allure open ./allure-report`                                                                                       |
 | **CI/CD Integration**      | - GitHub Actions workflow in `.github/workflows/playwright.yml` <br> - Triggers: push or PR to master <br> - Steps: Checkout → Setup Node.js → Install dependencies → Install Playwright browsers → Run tests → Generate & upload Allure reports <br> - Ensures continuous validation on every commit                                                                                                                                                                                                            |
-| **Browser Compatibility**  | - Chromium ✅ <br> - Firefox (optional) <br> - WebKit (Safari) (optional) <br> - Configured in `playwright.config.js` with parallel execution                                                                                                                                                                                                                                                                                                                                                                     |
+| **Browser Compatibility**  | - Chromium ✅ <br> - Firefox <br> - WebKit (Safari) <br> - Configured in `playwright.config.js` with parallel execution                                                                                                                                                                                                                                                                                                                                                                     |
 | **Project Structure**      | `/tests` – Test scenarios <br> `/pages` – Page Objects <br> `/components` – Reusable UI components <br> `/helpers` – Utility modules <br> `/workflows` – Business workflows <br> `/config` – JSON environment configs <br> `/study/basics` – JS exercises <br> `/reports` – HTML & Allure reports <br> `/.github/workflows` – CI/CD YAML files                                                                                                                                                                   |
 | **Git Workflow**           | **Initial Setup:** <br> `bash <br> git init <br> git add . <br> git commit -m "Initial commit" <br> git remote add origin https://github.com/roshanwatzap-tester/PlaywrightXFramework.git <br> git push -u origin master <br> ` <br> **Daily Workflow:** <br> `bash <br> git clone <repo-url> <br> git checkout -b ROSHAN_BRANCH <br> git add . <br> git commit -m "Changes in Env Config" <br> git push -u origin ROSHAN_BRANCH <br> git branch -d ROSHAN_BRANCH <br> `                                         |
 | **Getting Started**        | `bash <br> git clone https://github.com/roshanwatzap-tester/PlaywrightXFramework.git <br> npm install <br> cp .env.example .env <br> npx playwright test <br> npx allure generate ./allure-results -o ./allure-report <br> allure open ./allure-report <br> `                                                                                                                                                                                                                                                    |
@@ -37,12 +37,48 @@
 | **devices**        | `devices['Desktop Chrome']`                               | Predefined device/browser configuration from Playwright.                            | Can use mobile devices: <br> `devices['Pixel 5']` for mobile emulation.                                     |
 |
 Setup Notes
-
++++++++++++
 Defaults are safe for local development.
-
-retries: 2-3
-
 Uncomment multiple projects to run tests on multiple browsers.
-
 Adjust screenshots, trace, and video for storage efficiency in large suites.
 
+Creating Custom scripts to trigger the tests from package.json
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+To run few selected tests in local (Like Smoke/Sanity/Regression)>
+or you want to run for a particular config alone in Safari etc.
+Example: 
+npm run webtests  will trigger the below command::
+> npx playwright test --grep @Web
+
+Pacakge.Json set as below:
+
+scripts": {
+     "webtests" : "npx playwright test --grep @Web",
+     "AItests"  : "npx playwright test --grep @AI",
+     "SafariNewConfig" : "npx playwright test --config playwright.config1.js --project=safari"
+  }
+
+![Framework Overview](images/framework-overview.png)
+![TerminalOutput](images/Terminal Output.png)
+![Test Screenshot](images/screenshot1.png)
+![Test Screenshot](images/screenshot2.png)
+![Test Screenshot](images/screenshot3.png)
+![HTML_Report](images/HTML_Report.png)
+![Pipeline_Dashboard](images/Pipeline_Dashboard.png)
+![Allure Report](images/AllureReport1.png)
+![Trace](images/Trace.png)
+![File_Operations](images/File_Operations.png)
+![Pipeline(CISetup)](images/Pipeline(CI Setup).png)
+![Scripts](images/scripts.png)
+
+
+
+
+
+
+
+
+
+
+
+  
