@@ -64,11 +64,11 @@ jobs:
           mysql -h 127.0.0.1 -P 3306 -uroot -proot123 testdb <<'EOF'
           CREATE TABLE IF NOT EXISTS test_data (
             id INT PRIMARY KEY AUTO_INCREMENT,
-            product_name VARCHAR(255),
-            country VARCHAR(100),
+            testProduct VARCHAR(255),
+            testCountry VARCHAR(100),
             username VARCHAR(50),
             password VARCHAR(50),
-            order_log_path VARCHAR(500)
+            logPath VARCHAR(500)
           );
 
           INSERT INTO test_data (id, product_name, country, username, password, order_log_path)
