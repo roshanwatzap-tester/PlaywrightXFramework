@@ -1,4 +1,4 @@
-name: CI  E2E -Playwright Tests with Allure
+name: CI E2E - Playwright Tests with Allure
 
 on:
   push:
@@ -19,7 +19,6 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: root123
           MYSQL_DATABASE: testdb
-          
         ports:
           - 3306:3306
         options: >-
@@ -28,7 +27,7 @@ jobs:
           --health-timeout=5s
           --health-retries=3
 
-    # Environment variables (read from .env)
+    # Environment variables
     env:
       TEST_BASE_URL: https://rahulshettyacademy.com/client
       TEST_USERNAME: roshan.thomas@test.com
@@ -38,47 +37,7 @@ jobs:
       TEST_DB_USER: root
       TEST_DB_PASS: root123
       TEST_DB_NAME: testdb
+      ORDER_LOG_PATH: C:\\PlaywrightAutomationGITHUB\\PlaywrightXFramework\\logging\\orderLogs.txt
 
     steps:
-      # 1️⃣ Checkout repository code
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      # 2️⃣ Setup Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      # 3️⃣ Install dependencies (from package-lock.json)
-      - name: Install dependencies
-        run: npm ci
-
-      # 4️⃣ Install Playwright browsers + OS dependencies
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-
-      # 5️⃣ Wait for MySQL to be ready  waits for up to 60 seconds each try every 2 seconds to connect
-      - name: Wait for MySQL
-        run: |
-          for i in {1..30}; do 
-            mysqladmin ping -h127.0.0.1 -P3306 -uroot -proot123 && break
-            sleep 2 
-          done
-
-      # 6️⃣ Run Playwright tests with Allure reporter
-      - name: Run Playwright tests
-        run: npx playwright test --reporter=line,allure-playwright
-
-      # 7️⃣ Generate Allure HTML report
-      - name: Generate Allure report
-        run: |
-          rm -rf ./allure-report
-          npx allure generate ./allure-results -o ./allure-report
-
-      # 8️⃣ Upload Allure report as artifact
-      - name: Upload Allure report
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: allure-report
+      # 1️⃣
