@@ -12,7 +12,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    # MySQL service setup
     services:
       mysql:
         image: mysql:8
@@ -27,7 +26,6 @@ jobs:
           --health-timeout=5s
           --health-retries=3
 
-    # Environment variables
     env:
       TEST_BASE_URL: https://rahulshettyacademy.com/client
       TEST_USERNAME: roshan.thomas@test.com
@@ -37,7 +35,80 @@ jobs:
       TEST_DB_USER: root
       TEST_DB_PASS: root123
       TEST_DB_NAME: testdb
-      ORDER_LOG_PATH: C:\\PlaywrightAutomationGITHUB\\PlaywrightXFramework\\logging\\orderLogs.txt
+      ORDER_LOG_PATH: C:/PlaywrightAutomationGITHUB/PlaywrightXFramework/logging/orderLogs.txt
 
     steps:
-      # 1️⃣
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Wait for MySQL
+        run: |
+          for i in {1..30}; do
+            mysqladmin ping -h127.0.0.1 -P3306 -uroot -proot123 && break
+            sleep 2
+          done
+
+      - name: Initialize database and tables
+        run: |
+          mysql -h 127.0.0.1 -P 3306 -uroot -proot123 testdb <<'EOF'
+          CREATE TABLE IF NOT EXISTS test_data (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            product_name VARCHAR(255),
+            country VARCHAR(100),
+            username VARCHAR(50),
+            password VARCHAR(50),
+            order_log_path VARCHAR(500)
+          );
+
+          INSERT INTO test_data (id, product_name, country, username, password, order_log_path)
+          VALUES (1, 'ZARA COAT 3', 'India', 'roshan.thomas@test.com', 'Password2.', 'C:/PlaywrightAutomationGITHUB/PlaywrightXFramework/logging/orderLogs.txt');
+
+          CREATE TABLE IF NOT EXISTS order_logs (
+            Order_id VARCHAR(200),
+            timestamps VARCHAR(200),
+            testername VARCHAR(200),
+            browserName VARCHAR(255),
+            testcase_name VARCHAR(500),
+            runId VARCHAR(500)
+          );
+          EOF
+
+      - name: Run Playwright tests
+        run: npx playwright test --reporter=line,allure-playwright
+
+      - name: Generate Allure report
+        run: |
+          rm -rf ./allure-report
+          npx allure generate ./allure-results -o ./allure-report
+
+      - name: Upload Allure report
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
+
+      - name: Export DB dump
+        run: mysqldump -h 127.0.0.1 -P 3306 -uroot -proot123 testdb > db_dump.sql
+
+      - name: Upload DB Dump
+        uses: actions/upload-artifact@v4
+        with:
+          name: mysql-dump
+          path: db_dump.sql
+
+      - name: Upload Order Logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: order-logs
+          path: ./logging/orderLogs.txt
