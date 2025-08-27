@@ -21,19 +21,20 @@ class DashboardPage
 
   */ 
 
-   async searchProduct(productName)
-   {
-        await this.actualProdList.first().waitFor();  
+   async searchProduct(productName) {
+    productName = productName.trim(); // remove extra spaces from DB
+    
+    await this.actualProdList.first().waitFor();  
 
-        await 
-             this.actualProdList
-                  .filter({hasText:productName})
-                  .getByRole("button",{name:" Add To Cart"})
-                  .click(); 
-   console.log("Product Found ! Add To Cart Button clicked ");
-   
+    const button = this.actualProdList
+        .filter({ hasText: productName })
+        .getByRole("button", { name: "Add To Cart" })
+        .first(); // pick first match if multiple
 
-   }
+    await button.click(); 
+    console.log("Product Found! Add To Cart button clicked");
+}
+
 
 
    // click on Cart button on top right
