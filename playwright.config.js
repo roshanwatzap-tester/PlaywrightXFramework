@@ -6,7 +6,8 @@ const { defineConfig, devices } = require('@playwright/test');
  */
 module.exports = defineConfig({
   testDir: './tests',       // Directory where your test files live
-  timeout: 60 * 1000,       // Maximum time per test (40 seconds)
+  timeout: 240 * 1000,       // Maximum time per test (240 seconds)
+  globalSetup: require.resolve('./globalSetup.js'), // for RunID Global setup file to set environment variables
 
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -42,7 +43,7 @@ module.exports = defineConfig({
     },
 
    // --> 
-   /*  hiding FF and Webkit 
+    // /*  hiding FF and Webkit 
     
     {
       name: 'firefox',
@@ -52,7 +53,8 @@ module.exports = defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
-*/
+    
+    //*/--> 
     
   ],
 

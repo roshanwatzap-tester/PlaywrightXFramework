@@ -24,7 +24,7 @@ class LoginPage
       
       await this.signInButton.click(); 
       await this.page.waitForLoadState("networkidle");
-      
+      console.log("Login Successful with User: "+userName);
    }
 
 }

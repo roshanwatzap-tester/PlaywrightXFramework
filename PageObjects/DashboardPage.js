@@ -7,6 +7,7 @@ class DashboardPage
         // List of Products 
         this.actualProdList = page.locator(".card-body"); 
         this.cartbutton     = page.locator("button[routerlink*=cart]")
+        this.page = page;
   }
 
 /*
@@ -29,7 +30,8 @@ class DashboardPage
                   .filter({hasText:productName})
                   .getByRole("button",{name:" Add To Cart"})
                   .click(); 
-   console.log("Add To Cart Button clicked ");
+   console.log("Product Found ! Add To Cart Button clicked ");
+   
 
    }
 
@@ -39,8 +41,10 @@ class DashboardPage
    {
 
      await this.cartbutton.click();
+      console.log("Clicked on Cart button on top right");
 
-
+      await this.page.waitForLoadState('networkidle');
+          console.log("Navigated to Cart Page");
    }
 
 

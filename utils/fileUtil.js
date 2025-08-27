@@ -18,11 +18,15 @@ function readFile(filePath) {
 function writeOrder(filePath, orderId, username) {
   try {
     const now = new Date();
-    const dateTime = now.toISOString(); // timestamp
-    const logLine = orderId + " | " + dateTime + " | " + username + "\n";
+    //const dateTime = now.toISOString(); // this is UTC timestamp seemed like the wrong timezone since it showed yesterday
+    
+    // NZ timezone is UTC+12 or UTC+13 during daylight saving
+    const dateTime = new Date().toLocaleString("en-NZ", { timeZone: "Pacific/Auckland" });
+
+    const logLine = "OrderId:" +orderId + " | " + dateTime + " | " + username + "\n";
 
     fs.appendFileSync(filePath, logLine, "utf-8"); // append instead of overwrite
-    console.log("✅ Order logged: " + logLine.trim());
+    console.log("✅ Order logged: to ../logging/orderLogs" + logLine.trim());
   } catch (error) {
     console.error("❌ Error writing order ID:", error.message);
   }
