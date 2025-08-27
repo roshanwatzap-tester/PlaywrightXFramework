@@ -71,7 +71,7 @@ jobs:
             logPath VARCHAR(500)
           );
 
-          INSERT INTO test_data (id, product_name, country, username, password, order_log_path)
+          INSERT INTO test_data (id, testProduct, testCountry, username, password, order_log_path)
           VALUES (1, 'ZARA COAT 3', 'India', 'roshan.thomas@test.com', 'Password2.', 'C:/PlaywrightAutomationGITHUB/PlaywrightXFramework/logging/orderLogs.txt');
 
           CREATE TABLE IF NOT EXISTS order_logs (
