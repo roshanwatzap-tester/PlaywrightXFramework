@@ -35,7 +35,7 @@ jobs:
       TEST_DB_USER: root
       TEST_DB_PASS: root123
       TEST_DB_NAME: testdb
-      ORDER_LOG_PATH: C:/PlaywrightAutomationGITHUB/PlaywrightXFramework/logging/orderLogs.txt
+      ORDER_LOG_PATH: C:\\PlaywrightAutomationGITHUB\\PlaywrightXFramework\\logging\\orderLogs.txt
 
     steps:
       - name: Checkout repository
