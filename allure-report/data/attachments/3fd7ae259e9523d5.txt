@@ -1,0 +1,25 @@
+
+==============================
+💽🚀 Data fetched from Excel File → Starting Test with ::webkit!!
+==============================
+
+Login Successful with User: roshan.thomas@test.com
+Product Found ! Add To Cart Button clicked 
+Clicked on Cart button on top right
+Verified that Product present in Cart: ZARA COAT 3
+Clicked on Checkout button
+Entered in Country text box : ind
+Nation count retrieved from dropdown: 3
+Selecting the TestCountry: India
+Selected the Country from dropdown:  India
+Email field value is : roshan.thomas@test.com
+Verified that Email field is autopopulated with username: roshan.thomas@test.com
+Clicked on Place Order button
+Order ID is captured from UI:  | 68abfe4ff669d6cb0a98ec35 | 
+Order Number is :  | 68abfe4ff669d6cb0a98ec35 | 
+✅ Order logged: to ../logging/orderLogsOrderId: | 68abfe4ff669d6cb0a98ec35 |  | 25/08/2025, 6:10:23 pm | roshan.thomas@test.com
+Order details logged to file: C:\\PlaywrightAutomationGITHUB\\PlaywrightXFramework\\logging\\orderLogs.txt
+Count in Order History Page is :7
+Order ID found in Order History page on ROW NUMBER: 0
+View Clicked
+Test Completed - E2E flow successfull !!
