@@ -1,0 +1,34 @@
+
+===========================
+💽🚀 Starting Test Case ::Roshan_E2E_Web_Scenario:4 - Complete E2E Placing Order with data fetched from Database @Web with :: chromium !!
+
+=========================================================================
+💽🚀 Data fetched from MySQL DB → Starting Test with ::chromium !!
+=========================================================================
+
+Login Successful with User: roshan.thomas@test.com
+Product Found ! Add To Cart Button clicked 
+Clicked on Cart button on top right
+Navigated to Cart Page
+Verified that Product present in Cart: ZARA COAT 3
+Clicked on Checkout button
+Entered in Country text box : ind
+Nation count retrieved from dropdown: 3
+Selecting the TestCountry: India
+Selected the Country from dropdown:  India
+Email field value is : roshan.thomas@test.com
+Verified that Email field is autopopulated with username: roshan.thomas@test.com
+Clicked on Place Order button
+Order ID is captured from UI:  | 68ae6ce4f669d6cb0a9e92eb | 
+Order Number(formatted) is : 68ae6ce4f669d6cb0a9e92eb
+✅ Order logged: to ../logging/orderLogsOrderId:68ae6ce4f669d6cb0a9e92eb | 27/08/2025, 2:26:45 pm | roshan.thomas@test.com
+Order details logged to file: C:\PlaywrightAutomationGITHUB\PlaywrightXFramework\logging\orderLogs.txt
+Count in Order History Page is :7
+Order ID found in Order History page on ROW NUMBER: 0
+View Clicked
+🌟 Test Completed – E2E Journey Successful and Verified! ✅
+💽🚀 Order successfully logged with RunIDr4bjllb1xgto MySQL DB → {
+  orderIdformatted: '68ae6ce4f669d6cb0a9e92eb',
+  timestamps: '27/08/2025, 2:26:46 pm',
+  username: 'roshan.thomas@test.com'
+}
