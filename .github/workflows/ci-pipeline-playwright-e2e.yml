@@ -35,7 +35,7 @@ jobs:
       TEST_DB_USER: root
       TEST_DB_PASS: root123
       TEST_DB_NAME: testdb
-      ORDER_LOG_PATH: C:\\PlaywrightAutomationGITHUB\\PlaywrightXFramework\\logging\\orderLogs.txt
+      ORDER_LOG_PATH: ./logging/orderLogs.txt
 
     steps:
       - name: Checkout repository
@@ -72,7 +72,7 @@ jobs:
           );
 
           INSERT INTO test_data (id, testProduct, testCountry, username, password, logPath)
-          VALUES (1, 'ZARA COAT 3', 'India', 'roshan.thomas@test.com', 'Password2.', 'C:\\PlaywrightAutomationGITHUB\\PlaywrightXFramework\\logging\\orderLogs.txt');
+          VALUES (1, 'ZARA COAT 3', 'India', 'roshan.thomas@test.com', 'Password2.', './logging/orderLogs.txt');
 
           CREATE TABLE IF NOT EXISTS order_logs (
             Order_id VARCHAR(200),
