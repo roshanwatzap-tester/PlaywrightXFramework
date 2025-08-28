@@ -1,4 +1,4 @@
-name: CI E2E - Playwright Tests with Allure
+name: CI E2E - Playwright Tests with Allure built using PlaywrightXFramework developed by roshanwatzaptester
 
 on:
   push:
@@ -108,9 +108,9 @@ jobs:
           name: mysql-dump
           path: db_dump.sql
 
-      - name: Export order_logs to CSV (no headers)
+      - name: Export order_logs to CSV (with headers)
         run: |
-          mysql -h 127.0.0.1 -P 3306 -uroot -proot123 --batch --skip-column-names \
+          mysql -h 127.0.0.1 -P 3306 -uroot -proot123 --batch \
           -e "SELECT * FROM order_logs;" testdb | sed 's/\t/,/g' > order_logs.csv
 
       - name: Upload order_logs CSV
