@@ -46,20 +46,20 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies |  (PlaywrightXFramework_roshanwatzaptester)
+      - name: Install dependencies | (PlaywrightXFramework_roshanwatzaptester)
         run: npm ci
 
-      - name: Install Playwright Browsers |  (PlaywrightXFramework_roshanwatzaptester)
+      - name: Install Playwright Browsers | (PlaywrightXFramework_roshanwatzaptester)
         run: npx playwright install --with-deps
 
-      - name: Wait for MySQL |  (PlaywrightXFramework_roshanwatzaptester)
+      - name: Wait for MySQL | (PlaywrightXFramework_roshanwatzaptester)
         run: |
           for i in {1..30}; do
             mysqladmin ping -h127.0.0.1 -P3306 -uroot -proot123 && break
             sleep 2
           done
 
-      - name: Initialize database and tables |  (PlaywrightXFramework_roshanwatzaptester)
+      - name: Initialize database and tables | (PlaywrightXFramework_roshanwatzaptester)
         run: |
           mysql -h 127.0.0.1 -P 3306 -uroot -proot123 testdb <<'EOF'
           CREATE TABLE IF NOT EXISTS test_data (
@@ -85,30 +85,37 @@ jobs:
           );
           EOF
 
-      - name: Run Playwright tests |  (PlaywrightXFramework_roshanwatzaptester)
+      - name: Run Playwright tests | (PlaywrightXFramework_roshanwatzaptester)
         run: npx playwright test --reporter=line,allure-playwright
 
-      - name: Generate Allure report |  (PlaywrightXFramework_roshanwatzaptester)
+      - name: Generate Allure report | (PlaywrightXFramework_roshanwatzaptester)
         run: |
           rm -rf ./allure-report
           npx allure generate ./allure-results -o ./allure-report
 
-      - name: Upload Allure report |  (PlaywrightXFramework_roshanwatzaptester)
+      - name: Combine Allure results and report into PFX_AllureReports | (PlaywrightXFramework_roshanwatzaptester)
+        run: |
+          rm -rf PFX_AllureReports
+          mkdir -p PFX_AllureReports
+          cp -r allure-results PFX_AllureReports/
+          cp -r allure-report PFX_AllureReports/
+
+      - name: Upload PFX_AllureReports artifact | (PlaywrightXFramework_roshanwatzaptester)
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report
-          path: allure-report
+          name: PFX_AllureReports
+          path: PFX_AllureReports
 
-      - name: Export DB dump  | (PlaywrightXFramework_roshanwatzaptester)
+      - name: Export DB dump | (PlaywrightXFramework_roshanwatzaptester)
         run: mysqldump -h 127.0.0.1 -P 3306 -uroot -proot123 testdb > db_dump.sql
 
-      - name: Upload DB Dump |  (PlaywrightXFramework_roshanwatzaptester)
+      - name: Upload DB Dump | (PlaywrightXFramework_roshanwatzaptester)
         uses: actions/upload-artifact@v4
         with:
           name: mysql-dump
           path: db_dump.sql
 
-      - name: Export order_logs to CSV (with headers) |  (PlaywrightXFramework_roshanwatzaptester)
+      - name: Export order_logs to CSV (with headers) | (PlaywrightXFramework_roshanwatzaptester)
         run: |
           mysql -h 127.0.0.1 -P 3306 -uroot -proot123 --batch \
           -e "SELECT * FROM order_logs;" testdb | sed 's/\t/,/g' > order_logs.csv
@@ -119,7 +126,7 @@ jobs:
           name: order-logs-csv
           path: order_logs.csv
 
-      - name: Upload Order Logs |  (PlaywrightXFramework_roshanwatzaptester)
+      - name: Upload Order Logs | (PlaywrightXFramework_roshanwatzaptester)
         uses: actions/upload-artifact@v4
         with:
           name: order-logs
