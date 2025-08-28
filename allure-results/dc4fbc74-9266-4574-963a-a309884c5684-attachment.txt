@@ -1,8 +1,0 @@
-
-==============================
-💽🚀 Starting Test Case ::Roshan_E2E_Web_Scenario:4 - Complete E2E Placing Order with data fetched from Database @Web with :: firefox !!
-
-==============================
-💽🚀 Data fetched from MySQL DB → Starting Test with ::firefox !!
-==============================
-

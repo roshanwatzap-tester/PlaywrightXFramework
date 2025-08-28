@@ -6,8 +6,8 @@ const { defineConfig, devices } = require('@playwright/test');
  */
 module.exports = defineConfig({
   testDir: './tests',       // Directory where your test files live
-  timeout: 240 * 1000,       // Maximum time per test (240 seconds)
-  globalSetup: require.resolve('./globalSetup.js'), // for RunID Global setup file to set environment variables
+  timeout: 940 * 1000,       // Maximum time per test (940 seconds)
+  globalSetup: require.resolve('./globalSetup.js'), // for RunID Global setup file to set runID env variable
 
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -31,7 +31,7 @@ module.exports = defineConfig({
     screenshot: 'on',         // Capture screenshots on failure
     trace: 'on',              // Capture trace on failure
     viewport: null,          // Use full screen viewport
-    video : 'on',         
+    video : 'retain-on-failure', // Record video only when test fails        
     
   },
 

@@ -1,11 +1,11 @@
-const { test, expect } = require('@playwright/test');
-const { POManager } = require('../PageObjects/POManager');
-const env_config = require('../Config/config');
-const { getRecord,putRecord } = require("../utils/dbUtil");   // DB util instead of Excel
-const TestDataSet= JSON.parse(JSON.stringify(require('../testData/TestData_E2E_PO.json')));
+const { test, expect } = require('@playwright/test'); // Playwright test library
+const { POManager } = require('../PageObjects/POManager'); // POM Manager
+const env_config = require('../Config/config'); // Import environment-specific config
+const { getRecord,putRecord } = require("../utils/dbUtil");   // DB util to read and write to DB
+const TestDataSet= JSON.parse(JSON.stringify(require('../testData/TestData_E2E_PO.json'))); // Test data JSON file
 
 
-const runId = process.env.GLOBAL_RUN_ID;
+const runId = process.env.GLOBAL_RUN_ID; // Get Run ID from environment variable set in globalSetup.js run at the start of test suite from package.config.json
 //console.log("Using Run ID:", runId);
 
 //Test Scenario : 4
@@ -41,7 +41,7 @@ test('Roshan_E2E_Web_Scenario:4 - Complete E2E Placing Order with data fetched f
    const password    = dbRecord.password;
    const logPath     = dbRecord.logPath;
 
-   const testCountry =TestDataSet.testCountry;  // JSON data from TestData_E2E_PO.json space issue
+   const testCountry =TestDataSet.testCountry;  // -not using DB for this field JSON data from TestData_E2E_PO.json  
    
    // Login - POM 
    const loginPage = POManagerObj.getLoginPage();  
@@ -54,7 +54,7 @@ test('Roshan_E2E_Web_Scenario:4 - Complete E2E Placing Order with data fetched f
    
    await page.waitForLoadState('networkidle');
    
-   await dashboardPage.navigateToCart();            // click on Cart button on top right - navigate to cart page
+   await dashboardPage.navigateToCart();  // click on Cart button on top right - navigate to cart page
 
    // CheckoutPage - POM 
    const checkoutPage = POManagerObj.getCheckoutPage();  
@@ -63,7 +63,7 @@ test('Roshan_E2E_Web_Scenario:4 - Complete E2E Placing Order with data fetched f
 
     
 
-   //Insert Order ID to DB table - order_logs     
+   //Insert Order ID to DB table named order_logs     
          await putRecord(dbOrderLog.orderIdformatted, dbOrderLog.timestamps, dbOrderLog.username,browserName, TC_name, runId);
          console.log("💽🚀 Order successfully logged with RunID"+ runId +"to MySQL DB →", dbOrderLog);
    
