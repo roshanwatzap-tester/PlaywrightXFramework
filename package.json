@@ -3,17 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    
     "webtests": "npx playwright test --grep @Web --reporter=line,allure-playwright",
-  
     "allure:generate": "allure generate ./allure-results --clean",
     "allure:open": "allure open ./allure-report",
     "allure:report": "npm run allure:generate && npm run allure:open",
-
+    
     "AItests": "npx playwright test --grep @AI",
     "regression": "npx playwright test",
     "smoke": "npx playwright test tests/E2E_PO.spec.js",
-    
     "SafariNewConfig": "npx playwright test --config playwright.config1.js --project=safari"
   },
   "keywords": [],
@@ -29,6 +26,7 @@
     "@cucumber/cucumber": "^12.1.0",
     "dotenv": "^17.2.1",
     "exceljs": "^4.4.0",
+    "http-server": "^14.1.1",
     "mysql2": "^3.14.3"
   },
   "directories": {

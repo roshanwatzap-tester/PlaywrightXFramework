@@ -11,7 +11,7 @@ const config = {
     username: process.env.TEST_USERNAME,
     password: process.env.TEST_PASSWORD,
 
-    // Database credentials
+    // Database connection string
     db: {
       host: process.env.TEST_DB_HOST,
       port: process.env.TEST_DB_PORT,

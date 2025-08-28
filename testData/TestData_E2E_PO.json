@@ -4,7 +4,7 @@
  "testCountry" : " India",
  "username"   : "roshan.thomas@test.com",
  "password"   : "Password2.",
- "logPath"    : "C:\\PlaywrightAutomationGITHUB\\PlaywrightXFramework\\logging\\orderLogs.txt"
+ "logPath"    : "./logging/orderLogs.txt"
 
 
 }
