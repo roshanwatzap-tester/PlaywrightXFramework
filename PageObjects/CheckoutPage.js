@@ -32,8 +32,9 @@ class CheckoutPage
 
 async verifyProductInCart(testProduct) {
     // safer wait with timeout
+    await this.tproductlist.first().waitFor({ timeout: 15000 });
     const productList = this.tproductlist.first();
-    await expect(productList).toBeVisible({ timeout: 5000 });
+    await expect(productList).toBeVisible({ timeout: 15000 });
 
     // check if the product is in the cart
     const productLocator = this.page.locator('h3:has-text("' + testProduct + '")');

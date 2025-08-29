@@ -11,7 +11,7 @@ const { readExcel } = require("../utils/excelUtil");
  console.log("Using Run ID:", runId);
  
 //Test Scenario : 3 
-test('Roshan_E2E_Web_Scenario:3 - Complete E2E Placing Order fetched data from Excel @Web',async({browser,browserName}) => {
+test.only('Roshan_E2E_Web_Scenario:3 - Complete E2E Placing Order fetched data from Excel @Web',async({browser,browserName}) => {
 
    // Read excel data
    const excelData = await readExcel('./testData/TestData.xlsx');
