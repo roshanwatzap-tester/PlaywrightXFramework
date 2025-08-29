@@ -11,7 +11,7 @@ class CheckoutPage
         
 
     }
-
+/*
     async verifyProductInCart(testProduct)
     {
          await this.tproductlist.first().waitFor();  // waitfor product list in Cart
@@ -28,6 +28,26 @@ class CheckoutPage
 
 
     }
+*/
+
+async verifyProductInCart(testProduct) {
+    // safer wait with timeout
+    const productList = this.tproductlist.first();
+    await expect(productList).toBeVisible({ timeout: 5000 });
+
+    // check if the product is in the cart
+    const productLocator = this.page.locator('h3:has-text("' + testProduct + '")');
+    const isPresent = await productLocator.isVisible();
+
+    expect(isPresent).toBeTruthy();
+    if (isPresent) {
+        console.log("Verified that Product present in Cart: " + testProduct);
+    } else {
+        console.log("❌ Product NOT found in Cart: " + testProduct);
+    }
+}
+
+
 
      async CheckoutOperations(username,testCountry,logPath)
     {
