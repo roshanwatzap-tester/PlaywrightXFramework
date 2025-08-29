@@ -9,8 +9,10 @@ async function getRecord() {
   return rows[0]; // return the first row
 }
 
+
 // Insert a record into order_logs
-async function putRecord(orderId, timestamps, testerName,browserName, TC_name, runId) {
+async function putRecord(orderId, timestamps, testerName,browserName, TC_name, runId) 
+{
   const connection = await mysql.createConnection(config.db);
   await connection.execute(
     'INSERT INTO order_logs (Order_id, timestamps, testername,browserName,testcase_name,runId) VALUES (?, ?, ?, ?, ?, ?)',

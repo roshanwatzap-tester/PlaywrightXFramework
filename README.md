@@ -111,6 +111,18 @@ Enhancements (Added on 28/08/2025)
 | **Flexible Test Data Management**      | - Multi-source: JSON, Excel, MySQL. <br> - Centralized design allows **dynamic environment switching and reusable test data**.                                                                                                                                                                                                                                              |
 | **Enhanced CI/CD Integration**         | - GitHub Actions workflow ensures **continuous validation** on every push or PR. <br> - Artifacts and reports are linked with **Run ID, environment, and executor info** for full visibility.                                                                                                                                                                               |
 
+## PlaywrightXFramework - Key Features
+
+### Login Page
+- Implemented **AI-style self-healing locators** using **GitHub Copilot**.
+- Multiple fallback locators for `username`, `password`, `sign-in button`, and `error messages` to make tests more resilient to UI changes.
+- Verification method for **unsuccessful login** (invalid credentials), including dynamic waits for transient error messages.
+- The code for this Login Page was **generated and assisted by Microsoft Copilot**, which helped:
+  - Generate the Page Object file structure following best practices.
+  - Add methods for entering username, password, clicking login, and verifying login outcomes.
+  - Suggest multiple locator strategies for each element (fallbacks/self-healing style).
+  - Scaffold reusable patterns across the codebase for maintainability and readability.
+- **Note:** This self-healing implementation and Copilot-assisted generation is currently applied to **Login Page only**.
 
 
 
