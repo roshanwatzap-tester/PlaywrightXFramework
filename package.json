@@ -7,7 +7,6 @@
     "allure:generate": "allure generate ./allure-results --clean",
     "allure:open": "allure open ./allure-report",
     "allure:report": "npm run allure:generate && npm run allure:open",
-    
     "AItests": "npx playwright test --grep @AI",
     "regression": "npx playwright test",
     "smoke": "npx playwright test tests/E2E_PO.spec.js",
@@ -20,7 +19,8 @@
     "@playwright/test": "^1.54.2",
     "@types/node": "^22.7.8",
     "@zerostep/playwright": "^0.1.5",
-    "allure-playwright": "^3.3.3"
+    "allure-playwright": "^3.3.3",
+    "multiple-cucumber-html-reporter": "^3.9.3"
   },
   "dependencies": {
     "@cucumber/cucumber": "^12.1.0",

@@ -126,7 +126,26 @@ Enhancements (Added on 28/08/2025)
 
 
 
+| **Section**                          | **Description**                                                                                                                                                                                                                                  | **Location / Commands**                                                                                                           |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Feature Files**                    | Describe test scenarios in Gherkin syntax (BDD style). Each `.feature` file contains scenarios and steps.                                                                                                                                        | `Cucumber/features/`                                                                                                              |
+| **Step Definitions**                 | Implements the logic for each step in feature files. Step definitions interact with the application, database, and test data.                                                                                                                    | `Cucumber/steps/` <br> Example: `orderSteps.js`                                                                                   |
+| **Hooks**                            | Hooks (`Before`, `After`) are used for setup, teardown, and **generating unique RUNID** for each test execution. They also handle DB logging and test context initialization.                                                                    | `Cucumber/steps/hooks.js`                                                                                                         |
+| **Database Integration**             | - **Read Test Data**: Fetch dynamic test data like login credentials or order details from DB.<br> - **Log Test Results**: Write scenario execution status, logs, and RUNID back to DB for tracking.                                             | Configured via DB utility module (e.g., `db.js`)                                                                                  |
+| **Run Tests & Generate JSON Report** | Executes all feature files and stores results as JSON, tagged with RUNID from hooks.                                                                                                                                                             | `bash npx cucumber-js features --require steps/hooks.js --require steps/orderSteps.js --format json:reports/cucumber-report.json` |
+| **Generate HTML Report**             | Converts the JSON report into a readable HTML report for analysis.                                                                                                                                                                               | `bash node reports/generate-Cucumber-report.js`                                                                                   |
+| **Notes**                            | - Place all feature files in `features/`.<br> - Place all step definition files and hooks in `steps/`.<br> - Reports are saved in `reports/` folder.<br> - RUNID from hooks ensures traceability.<br> - Suitable for CI/CD pipeline integration. | N/A                                                                                                                               |
+## Screenshots CUCUMBER FRAMEWORK IMPLEMENTATION
 
 
 
-  
+### Cucumber Run DB Log
+![Cucumber DB Log](images/CUCUMBER_RUN_DB_Log.png)
+
+### Cucumber HTML Report
+![Cucumber Report](images/CucumberReports.png)
+
+
+
+  ### Copilot Suggestion Accepted
+![Copilot Suggestion](images/CTRL_I_COPILOT_USE_SUGGESTION_ACCEPT.png)
