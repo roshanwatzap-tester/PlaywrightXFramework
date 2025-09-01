@@ -1,4 +1,4 @@
-**HIGH LEVEL OVERVIEW - PLAYWRIGHTXFRAMEWORK (PXF) **
+**HIGH LEVEL OVERVIEW - PLAYWRIGHTXFRAMEWORK (PXF)**
 
 The framework integrates CI/CD pipelines, multiple data sources, a Page Object Manager (Factory + Facade), AI-assisted locator suggestions via Microsoft Copilot, utilities for DB/File/Excel operations, parallel execution across browsers, and comprehensive reporting. RunIDs provide end-to-end traceability across all layers.
 
