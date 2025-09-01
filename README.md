@@ -64,17 +64,8 @@ The framework integrates CI/CD pipelines, multiple data sources, a Page Object M
      • Allure report environment configs
    * Enables full traceability across execution, logging, and reporting layers.
 
-**Quick Catch**
 
-* CI/CD → Test Execution (trigger & schedule).
-* Test Execution ↔ Browsers (parallel execution).
-* Test Execution → POManager (page object access).
-* POManager → Pages (LoginPage, DashboardPage, CartPage, CheckoutPage).
-* Pages → Utilities (DB updates, file updates, Excel ops).
-* Utilities → Reports (logs & RunID).
-* AI Copilot → POManager (locator suggestions).
-* Reports consolidate results (Allure + Playwright HTML) enriched with RunIDs.
-
+**DETAILED OVERVIEW**
 
 | Section                    | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
