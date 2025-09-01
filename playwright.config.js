@@ -26,7 +26,7 @@ module.exports = defineConfig({
 
   /* Shared settings for all projects */
   use: {
-    headless: true,          // Run browser in headless mode
+    headless: true,          // false if u want to Run browser in headless mode
     timeout: 30000,           // timeout after 30 seconds(30000milliseconds)
     screenshot: 'on',         // Capture screenshots on failure
     trace: 'on',              // Capture trace on failure
