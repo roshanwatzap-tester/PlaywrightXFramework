@@ -10,6 +10,7 @@
     "AItests": "npx playwright test --grep @AI",
     "regression": "npx playwright test",
     "smoke": "npx playwright test tests/E2E_PO.spec.js",
+    "aiprompt:run" : "npx playwright test --config playwright.AIconfig.js",
     "SafariNewConfig": "npx playwright test --config playwright.config1.js --project=safari"
   },
   "keywords": [],
