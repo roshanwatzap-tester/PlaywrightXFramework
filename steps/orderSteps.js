@@ -1,4 +1,6 @@
-// steps/orderSteps.js
+// PXF- roshanwatzap-tester 
+// Step definitions for order placement using Playwright and Cucumber
+
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { chromium } = require('playwright');
 const { POManager } = require('../PageObjects/POManager');

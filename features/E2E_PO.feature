@@ -1,4 +1,4 @@
-Feature: Cucumber: PXF-E2E Order Placement with DB Data @Web
+Feature: Cucumber BDD: PXF-E2E Order Placement with DB Data @Web
 
   Scenario Outline: Place Order with DB Data
     Given On website "<URL>"

@@ -34,6 +34,21 @@
 | **Example**              | Running `npm run webtests` will trigger:  `npx playwright test --grep @Web`                                                                                                                         |
 | **Package.json scripts** | ```json  {    "scripts": {      "webtests": "npx playwright test --grep @Web",      "AItests": "npx playwright test --grep @AI",      "SafariNewConfig": "npx playwright test --config playwright.config1.js --project=safari"    }  }  ``` |
 
+# PlaywrightXFramework (PXF) – Architecture Overview
+
+![PlaywrightXFramework Architecture](ARCHITECTURE_PXF_FINAL.png)
+
+This diagram provides a **comprehensive overview of the PlaywrightXFramework (PXF)**, highlighting its **modular, maintainable, and enterprise-ready design**. It shows the interaction between the **CI/CD pipeline, test execution layer, browsers, Page Object Manager (POManager), Page Objects, utilities, AI-assisted locators, test data sources, and reporting layers**.  
+
+PXF is designed for:  
+- **Multi-browser parallel execution** (Chromium, Firefox, WebKit)  
+- **Cucumber BDD support** with Gherkin feature files  
+- **Database, JSON, and Excel-driven test data**  
+- **AI-assisted locator guidance** via Microsoft Copilot  
+- **Comprehensive reporting** with Allure and Playwright HTML reports  
+- **RunID-based traceability** across tests, logs, and reports  
+
+
 ## Demo Video
 
 <!-- MP4 video player -->

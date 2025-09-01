@@ -4,7 +4,7 @@
     "elements": [
       {
         "description": "",
-        "id": "cucumber:-pxf-e2e-order-placement-with-db-data-@web;place-order-with-db-data",
+        "id": "cucumber-bdd:-pxf-e2e-order-placement-with-db-data-@web;place-order-with-db-data",
         "keyword": "Scenario Outline",
         "line": 12,
         "name": "Place Order with DB Data",
@@ -15,11 +15,11 @@
             "line": 4,
             "name": "On website \"https://rahulshettyacademy.com/client\"",
             "match": {
-              "location": "steps\\orderSteps.js:12"
+              "location": "steps\\orderSteps.js:14"
             },
             "result": {
               "status": "passed",
-              "duration": 5829581500
+              "duration": 7647731900
             }
           },
           {
@@ -28,11 +28,11 @@
             "line": 5,
             "name": "I login with DB credentials from DB",
             "match": {
-              "location": "steps\\orderSteps.js:26"
+              "location": "steps\\orderSteps.js:28"
             },
             "result": {
               "status": "passed",
-              "duration": 2494180499
+              "duration": 2558644800
             }
           },
           {
@@ -41,11 +41,11 @@
             "line": 6,
             "name": "I search and add product \"ZARA COAT 3\" to cart",
             "match": {
-              "location": "steps\\orderSteps.js:31"
+              "location": "steps\\orderSteps.js:33"
             },
             "result": {
               "status": "passed",
-              "duration": 2129101399
+              "duration": 2181478399
             }
           },
           {
@@ -54,11 +54,11 @@
             "line": 7,
             "name": "I checkout with country \"India\"",
             "match": {
-              "location": "steps\\orderSteps.js:38"
+              "location": "steps\\orderSteps.js:40"
             },
             "result": {
               "status": "passed",
-              "duration": 2257151200
+              "duration": 2449880000
             }
           },
           {
@@ -67,11 +67,11 @@
             "line": 8,
             "name": "The order should be logged in DB",
             "match": {
-              "location": "steps\\orderSteps.js:55"
+              "location": "steps\\orderSteps.js:57"
             },
             "result": {
               "status": "passed",
-              "duration": 37011899
+              "duration": 53897100
             }
           }
         ],
@@ -79,10 +79,10 @@
         "type": "scenario"
       }
     ],
-    "id": "cucumber:-pxf-e2e-order-placement-with-db-data-@web",
+    "id": "cucumber-bdd:-pxf-e2e-order-placement-with-db-data-@web",
     "line": 1,
     "keyword": "Feature",
-    "name": "Cucumber: PXF-E2E Order Placement with DB Data @Web",
+    "name": "Cucumber BDD: PXF-E2E Order Placement with DB Data @Web",
     "tags": [],
     "uri": "features\\E2E_PO.feature"
   }
