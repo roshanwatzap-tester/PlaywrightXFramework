@@ -36,7 +36,8 @@
 
 # PlaywrightXFramework (PXF) – Architecture Overview
 
-![PlaywrightXFramework Architecture](ARCHITECTURE_PXF_FINAL.png)
+![PlaywrightXFramework Architecture](images/ARCHITECTURE_PXF_FINAL.png)
+
 
 This diagram provides a **comprehensive overview of the PlaywrightXFramework (PXF)**, highlighting its **modular, maintainable, and enterprise-ready design**. It shows the interaction between the **CI/CD pipeline, test execution layer, browsers, Page Object Manager (POManager), Page Objects, utilities, AI-assisted locators, test data sources, and reporting layers**.  
 
