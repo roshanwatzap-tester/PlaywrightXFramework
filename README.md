@@ -105,7 +105,7 @@ PXF is designed for:
 ![Excel_Utility](images/Excel_Utility.png)
 
 
-*Generating Allure Reports from CI/CD Artifacts *
+**Generating Allure Reports from CI/CD Artifacts**
 Allure reports can be generated using the test execution artifacts uploaded by GitHub Actions. 
 The PFX_AllureReports folder contains the raw allure-results data and the previously generated allure-report. 
 By using the Allure CLI, you can generate a consolidated HTML report locally or on any environment. 
