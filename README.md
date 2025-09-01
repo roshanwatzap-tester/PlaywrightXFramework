@@ -1,3 +1,81 @@
+**HIGH LEVEL OVERVIEW - PLAYWRIGHTXFRAMEWORK (PXF) **
+
+The framework integrates CI/CD pipelines, multiple data sources, a Page Object Manager (Factory + Facade), AI-assisted locator suggestions via Microsoft Copilot, utilities for DB/File/Excel operations, parallel execution across browsers, and comprehensive reporting. RunIDs provide end-to-end traceability across all layers.
+
+**Components:**
+
+1. **CI/CD Integration**
+
+   * GitHub Actions Workflow triggers test execution on code push/PR.
+   * Orchestrates test runs across browsers.
+   * Uploads artifacts such as Allure Reports, Playwright HTML reports, logs, and DB dumps.
+
+2. **Test Execution Layer**
+
+   * Playwright Tests (assigned RunID in format: RUNID_PXF_OME9XXXX).
+   * Cucumber BDD Tests (assigned RunID in format: RUNID\_CUCUMBER\_20250901T00XXXXXXXX).
+   * Supports cross-browser parallel execution.
+   * Both test types consume test data from JSON, Excel, and MySQL DB.
+   * Test scripts interact with the Page Object Manager to access Page Objects.
+
+3. **Browsers**
+
+   * Chromium, Firefox, WebKit (Safari).
+   * All browsers support parallel execution triggered by the test execution layer.
+
+4. **Page Object Manager (POManager)**
+
+   * Implements Factory + Facade patterns.
+   * Central entry point for accessing page objects.
+   * Pages include LoginPage, DashboardPage, CartPage, and CheckoutPage.
+   * Assisted by Microsoft Copilot, which suggests locator alternatives for more resilient automation (AI-assisted, **not fully self-healing**).
+
+5. **Data Sources**
+
+   * JSON Test Data files
+   * Excel Test Data files
+   * MySQL Database
+   * Data is injected into Playwright and Cucumber BDD test execution.
+
+6. **Utilities Layer**
+
+   * DB Utility: Inserts execution logs into the order_logs table, including RunID, browser, and tester metadata.
+   * File Operations: Maintains orderLog.txt and logs RunIDs locally.
+   * Excel Utility: Reads and writes Excel-based test data.
+
+7. **AI Feature**
+
+   * Microsoft Copilot provides **locator suggestions** to improve test reliability.
+   * Currently applied to LoginPage but can be extended to other pages.
+   * Enhances resilience by offering fallback locator recommendations, **but does not automatically fix failing tests at runtime**.
+
+8. **Reporting**
+
+   * Playwright HTML Report: Includes screenshots, videos, traces, linked with RunIDs.
+   * Allure Report: Provides step-wise execution trace, environment configs, executor.json, and RunID traceability.
+   * Reports are enriched with metadata from DB/File utilities and uploaded via CI/CD pipeline.
+
+9. **RunID Flow & Traceability**
+
+   * Each Playwright and Cucumber run generates a unique RunID.
+   * RunIDs are logged consistently in:
+     • orderLog.txt (File Ops)
+     • order_logs table (MySQL DB)
+     • Allure report environment configs
+   * Enables full traceability across execution, logging, and reporting layers.
+
+**Quick Catch**
+
+* CI/CD → Test Execution (trigger & schedule).
+* Test Execution ↔ Browsers (parallel execution).
+* Test Execution → POManager (page object access).
+* POManager → Pages (LoginPage, DashboardPage, CartPage, CheckoutPage).
+* Pages → Utilities (DB updates, file updates, Excel ops).
+* Utilities → Reports (logs & RunID).
+* AI Copilot → POManager (locator suggestions).
+* Reports consolidate results (Allure + Playwright HTML) enriched with RunIDs.
+
+
 | Section                    | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Author**                 | **Roshan Thomas - Auckland, New Zealand** <br> GitHub: [roshanwatzap-tester](https://github.com/roshanwatzap-tester)                                                                                                                                                                                                                                                                                                                                                                                                                     |
