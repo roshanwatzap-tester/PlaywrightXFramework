@@ -16,7 +16,7 @@ module.exports = defineConfig({
   forbidOnly: !!process.env.CI,
 
   /* Retry on CI only */
-  retries: process.env.CI ? 1 : 1,
+  retries: process.env.CI ? 0 : 0,
 
   /* Opt out of parallel tests on CI */
   workers: process.env.CI ? 1 : undefined,
@@ -26,7 +26,7 @@ module.exports = defineConfig({
 
   /* Shared settings for all projects */
   use: {
-    headless: true,          // Run browser in headless mode
+    headless: false,          // Run browser in headless mode
     timeout: 30000,           // timeout after 30 seconds(30000milliseconds)
     screenshot: 'on',         // Capture screenshots on failure
     trace: 'on',              // Capture trace on failure
