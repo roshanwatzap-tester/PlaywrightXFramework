@@ -1,0 +1,26 @@
+
+==========================================================================
+💽🚀 Data fetched from Excel File → Starting Test with ::chromium!!
+===========================================================================
+
+Login Successful with User: roshan.thomas@test.com
+Product Found! Add To Cart button clicked
+Clicked on Cart button on top right
+Navigated to Cart Page
+Verified that Product present in Cart: ZARA COAT 3
+Clicked on Checkout button
+Entered in Country text box : ind
+Nation count retrieved from dropdown: 3
+Selecting the TestCountry: India
+Selected the Country from dropdown:  India
+Email field value is : roshan.thomas@test.com
+Verified that Email field is autopopulated with username: roshan.thomas@test.com
+Clicked on Place Order button
+Order ID is captured from UI:  | 68cd19d1f669d6cb0ad8ab5d | 
+Order Number(formatted) is : 68cd19d1f669d6cb0ad8ab5d
+✅ Order logged: to ../logging/orderLogsOrderId:68cd19d1f669d6cb0ad8ab5d | 19/09/2025, 8:52:33 pm | roshan.thomas@test.com
+Order details logged to file: ./logging/orderLogs.txt
+Count in Order History Page is :8
+Order ID found in Order History page on ROW NUMBER: 0
+View Clicked
+🌟 Test Completed – E2E Journey Successful and Verified! ✅

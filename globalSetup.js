@@ -9,7 +9,7 @@ module.exports = async () => {
   // Set it as an environment variable
   process.env.GLOBAL_RUN_ID = runId;
   
-  console.log("💽🚀 Global Run ID (set in globalSetup):", runId);
+  console.log("💽🚀🌟 Using PXF Playwright Run ID: (set in globalSetup):", runId);
 };
 /*
 How this works? 

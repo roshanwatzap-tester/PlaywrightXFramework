@@ -30,16 +30,16 @@ module.exports = defineConfig({
     timeout: 30000,           // timeout after 30 seconds(30000milliseconds)
     screenshot: 'on',         // Capture screenshots on failure
     trace: 'on',              // Capture trace on failure
-    viewport: null,          // Use full screen viewport
+    viewport: null,          // Use full screen viewport {width:720, height:720} custom dimensions using viewport
     video : 'retain-on-failure', // Record video only when test fails        
-    
+    ignoreHTTPSErrors: true,  // if SSL certificate is not there then click on Adavanced and continue
   },
 
   /* Define projects to run tests on different browsers */
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'] },   // ...devices['iPhone 11']  >> like this give the device
     },
 
    // --> 

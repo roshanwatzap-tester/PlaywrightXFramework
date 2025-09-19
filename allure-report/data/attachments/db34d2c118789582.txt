@@ -1,0 +1,4 @@
+Login Successful with User: roshan.thomas@test.com
+Product Found! Add To Cart button clicked
+Clicked on Cart button on top right
+Navigated to Cart Page

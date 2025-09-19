@@ -36,17 +36,18 @@ test('Roshan_E2E_Web_Scenario:1 - Complete E2E Placing Order with data fetched f
    const loginPage = POManagerObj.getLoginPage();  
    await loginPage.goTo(env_config.baseURL);
    await loginPage.validLogin(env_config.username,env_config.password);
+   page.screenshot({path:'Login_Screenshot_'+ browserName+'.png'});
      
    // DashboardPage - POM 
    const dashboardPage = POManagerObj.getDashboardpage(); 
    await dashboardPage.searchProduct(testProduct);     // search the Product and add to Cart
    await dashboardPage.navigateToCart(); // click on Cart button on top right - navigate to cart page
-
+     page.screenshot({path:'Dashboard_Screenshot_'+ browserName+'.png'});
    // CheckoutPage - POM 
    const checkoutPage = POManagerObj.getCheckoutPage();  
    await checkoutPage.verifyProductInCart(testProduct);
    await checkoutPage.CheckoutOperations(env_config.username,testCountry,logPath); 
-
+        page.screenshot({path:'Checkout_Screenshot_'+ browserName+'.png'});
   await context.close();
 });
 //Test Scenario : 2 
