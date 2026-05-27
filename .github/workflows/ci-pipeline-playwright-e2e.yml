@@ -1,4 +1,4 @@
-name: CI E2E - Playwright Tests with Allure built using PlaywrightXFramework developed by roshanwatzaptester
+name: CI E2E - Playwright Tests with Allure built using PlaywrightXFramework developed by roshanwatzaptester At Aucklnd
 
 on:
   push:
