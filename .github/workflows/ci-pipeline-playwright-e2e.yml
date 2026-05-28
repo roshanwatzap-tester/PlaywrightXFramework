@@ -38,7 +38,7 @@ jobs:
       ORDER_LOG_PATH: ./logging/orderLogs.txt
 
     steps:
-      - name: Checkout Automation Repository | (PlaywrightXFramework_roshanwatzaptester)
+      - name: Checkout Automation Repository fully | (PlaywrightXFramework_roshanwatzaptester)
         uses: actions/checkout@v4
 
       - name: Setup Node.js | (PlaywrightXFramework_roshanwatzaptester)
