@@ -38,7 +38,7 @@ jobs:
       ORDER_LOG_PATH: ./logging/orderLogs.txt
 
     steps:
-      - name: Checkout repository | (PlaywrightXFramework_roshanwatzaptester)
+      - name: Checkout Automation Repository | (PlaywrightXFramework_roshanwatzaptester)
         uses: actions/checkout@v4
 
       - name: Setup Node.js | (PlaywrightXFramework_roshanwatzaptester)
@@ -46,20 +46,20 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies | (PlaywrightXFramework_roshanwatzaptester)
+      - name: Install dependencies mentioned in package.jsom | (PlaywrightXFramework_roshanwatzaptester)
         run: npm ci
 
       - name: Install Playwright Browsers | (PlaywrightXFramework_roshanwatzaptester)
         run: npx playwright install --with-deps
 
-      - name: Wait for MySQL | (PlaywrightXFramework_roshanwatzaptester)
+      - name: Wait for MySQL to be ready | (PlaywrightXFramework_roshanwatzaptester)
         run: |
           for i in {1..30}; do
             mysqladmin ping -h127.0.0.1 -P3306 -uroot -proot123 && break
             sleep 2
           done
 
-      - name: Initialize database and tables | (PlaywrightXFramework_roshanwatzaptester)
+      - name: Initialize database and tables with Test Data | (PlaywrightXFramework_roshanwatzaptester)
         run: |
           mysql -h 127.0.0.1 -P 3306 -uroot -proot123 testdb <<'EOF'
           CREATE TABLE IF NOT EXISTS test_data (
@@ -126,7 +126,7 @@ jobs:
           name: order-logs-csv
           path: order_logs.csv
 
-      - name: Upload Order Logs | (PlaywrightXFramework_roshanwatzaptester)
+      - name: Upload Order Logs in text file format | (PlaywrightXFramework_roshanwatzaptester)
         uses: actions/upload-artifact@v4
         with:
           name: order-logs
