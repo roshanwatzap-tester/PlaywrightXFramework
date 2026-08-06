@@ -52,7 +52,7 @@ jobs:
       - name: Install Playwright Browsers | (PlaywrightXFramework_roshanwatzaptester)
         run: npx playwright install --with-deps
 
-      - name: Wait for MySQL to be ready | (PlaywrightXFramework_roshanwatzaptester)
+      - name:  Wait for MySQL to be ready | (PlaywrightXFramework_roshanwatzaptester)
         run: |
           for i in {1..30}; do
             mysqladmin ping -h127.0.0.1 -P3306 -uroot -proot123 && break

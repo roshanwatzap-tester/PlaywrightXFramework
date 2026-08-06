@@ -4,7 +4,7 @@ const env_config = require('../Config/config'); // Import environment-specific c
 const { getRecord,putRecord } = require("../utils/dbUtil");   // DB util to read and write to DB
 const TestDataSet= JSON.parse(JSON.stringify(require('../testData/TestData_E2E_PO.json'))); // Test data JSON file
 
-
+// GETTING RUN ID 
 const runId = process.env.GLOBAL_RUN_ID; // Get Run ID from environment variable set in globalSetup.js run at the start of test suite from package.config.json
 //console.log("Using Run ID:", runId);
 

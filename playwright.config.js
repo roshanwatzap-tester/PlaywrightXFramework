@@ -43,7 +43,7 @@ module.exports = defineConfig({
     },
 
    // --> 
-    // /*  hiding FF and Webkit 
+    // /*  not hiding FF and Webkit 
     
     {
       name: 'firefox',
