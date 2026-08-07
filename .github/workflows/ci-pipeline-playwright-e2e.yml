@@ -44,7 +44,7 @@ jobs:
       - name: Setup Node.js | (PlaywrightXFramework_roshanwatzaptester)
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Install dependencies mentioned in package.jsom | (PlaywrightXFramework_roshanwatzaptester)
         run: npm ci
@@ -56,7 +56,7 @@ jobs:
         run: |
           for i in {1..30}; do
             mysqladmin ping -h127.0.0.1 -P3306 -uroot -proot123 && break
-            sleep 2
+            sleep 2 2
           done
 
       - name: Initialize database and tables with Test Data | (PlaywrightXFramework_roshanwatzaptester)
