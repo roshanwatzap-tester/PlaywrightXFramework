@@ -46,7 +46,7 @@ jobs:
         with:
           node-version: 24
 
-      - name: Install dependencies mentioned in package.jsom | (PlaywrightXFramework_roshanwatzaptester)
+      - name: Install dependencies mentioned in package.json | (PlaywrightXFramework_roshanwatzaptester)
         run: npm ci
 
       - name: Install Playwright Browsers | (PlaywrightXFramework_roshanwatzaptester)
